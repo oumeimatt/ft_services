@@ -13,5 +13,6 @@ RUN mv phpMyAdmin-5.0.2-all-languages phpmyadmin
 RUN cp -rf phpmyadmin /var/www/html/
 COPY default.conf etc/nginx/conf.d/
 COPY config.inc.php /var/www/html/phpMyAdmin
+RUN openrc reboot
 
 CMD ["sh" "start.sh"]
