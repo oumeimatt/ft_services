@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: grafana
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: grafana
@@ -21,6 +22,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  annotations:
+    metallb.universe.tf/allow-shared-ip: shared
   name: grafana
 spec:
   type: LoadBalancer

@@ -4,4 +4,4 @@
  influx user create -n admin -p admin
  rc-service influxdb start
  rc-service telegraf start
- #/bin/sh
+sleep infinity
