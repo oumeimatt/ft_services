@@ -23,6 +23,7 @@ kind: Service
 metadata:
   name: influxdb
 spec:
+  type: ClusterIP
   selector:
     app: influxdb
   ports:

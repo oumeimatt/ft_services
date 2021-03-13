@@ -23,6 +23,7 @@ kind: Service
 metadata:
   name: ftps
 spec:
+  type: LoadBalancer
   selector:
     app: ftps
   ports:

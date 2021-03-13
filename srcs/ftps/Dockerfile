@@ -1,15 +1,19 @@
 FROM alpine:3.12
 
 RUN apk update
-RUN apk add openrc --no-cache
-RUN apk add vsftpd
-RUN apk add vsftpd-doc
-RUN apk add openssl
+RUN apk add openrc --no-cache vsftpd vsftpd-doc openssl
 COPY srcs/vsftpd.conf /etc/vsftpd/vsftpd.conf
 RUN adduser admin -D && echo "admin:123" | chpasswd
 RUN chown root:root /home/admin
 RUN mkdir /home/admin/files
 RUN chown admin:admin /home/admin/files
 COPY /srcs/ftps.pem /etc/ssl/
+
+
+RUN apk add --no-cache telegraf --repository http://dl-2.alpinelinux.org/alpine/edge/community
+RUN mkdir /etc/telegraf
+COPY ./srcs/telegraf.conf /etc/telegraf/
+
+
 COPY /srcs/start.sh /
 CMD ["sh", "start.sh"]

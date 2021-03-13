@@ -5,5 +5,5 @@ touch /run/openrc/softlevel
 rc-service mariadb start
 echo "CREATE USER 'admin'@'localhost'  IDENTIFIED BY '123';" | mysql -u root
 echo "GRANT ALL PRIVILEGES ON admin.* TO 'admin'@'localhost' IDENTIFIED BY '123';" | mysql -u root
-
-/bin/sh
+rc-service telegraf start
+#/bin/sh

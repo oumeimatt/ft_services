@@ -52,3 +52,8 @@ echo	"export MACHINE_STORAGE_PATH=\"/Users/$USER/goinfre/.docker\""	>> ~/.zshrc
 
 #docker rmi -f $(docker images -a -q)
 #docker rm -vf $(docker ps -a -q)
+
+#kubectl get pod -o wide
+#kubectl get svc
+#minikube addons enable metallb
+#kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"

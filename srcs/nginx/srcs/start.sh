@@ -2,4 +2,5 @@
 rc-status
 touch /run/openrc/softlevel
 rc-service nginx restart
-/bin/sh
+rc-service telegraf start
+#/bin/sh
