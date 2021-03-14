@@ -15,6 +15,7 @@ RUN wget http://wordpress.org/latest.tar.gz
 RUN tar -xzvf latest.tar.gz
 RUN rm latest.tar.gz
 RUN cp -rf wordpress /var/www/
+COPY srcs/wp-config.php /var/www/wordpress
 
 
 

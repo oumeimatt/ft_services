@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: mysql
 spec:
-  replicas: 2
   selector:
     matchLabels:
       app: mysql
@@ -30,18 +29,6 @@ spec:
   ports:
   - port: 3306
     targetPort: 3306
----
 
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: mypvc
-spec:
-  resources:
-    requests:
-      storage:  2Gi
-  volumeMode: Filesystem
-  accessModes:
-    - ReadWriteOnce
 
 

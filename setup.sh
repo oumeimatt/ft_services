@@ -1,7 +1,8 @@
-minikube delete 
-minikube start
+#minikube delete 
 
-eval $(minikube docker-env)
+#minikube start
+
+#eval $(minikube docker-env)
 docker rm -vf $(docker ps -a -q)
 docker rmi -f $(docker images -a -q)
 
@@ -19,13 +20,13 @@ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manife
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manifests/metallb.yaml
 kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
 
-kubectl apply -f ./srcs/nginx/srcs/nginx.yaml
-kubectl apply -f ./srcs/wordpress/srcs/wordpress.yaml
-kubectl apply -f ./srcs/phpmyadmin/srcs/phpmyadmin.yaml
-kubectl apply -f ./srcs/mysql/srcs/mysql.yaml
-kubectl apply -f ./srcs/influxdb/srcs/influxdb.yaml
-kubectl apply -f ./srcs/grafana/srcs/grafana.yaml
-kubectl apply -f ./srcs/ftps/srcs/ftps.yaml
-kubectl apply -f ./srcs/metallb.yaml
+kubectl apply -f ./srcs/yaml_files/nginx.yaml
+kubectl apply -f ./srcs/yaml_files/wordpress.yaml
+kubectl apply -f ./srcs/yaml_files/phpmyadmin.yaml
+kubectl apply -f ./srcs/yaml_files/mysql.yaml
+kubectl apply -f ./srcs/yaml_files/influxdb.yaml
+kubectl apply -f ./srcs/yaml_files/grafana.yaml
+kubectl apply -f ./srcs/yaml_files/ftps.yaml
+kubectl apply -f ./srcs/yaml_files/metallb.yaml
 
 minikube dashboard &

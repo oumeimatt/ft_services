@@ -1,7 +1,7 @@
 FROM alpine:3.12
 
 RUN apk update
-RUN apk add openrc --no-cache vsftpd vsftpd-doc openssl
+RUN apk add openrc --no-cache vsftpd openssl
 COPY srcs/vsftpd.conf /etc/vsftpd/vsftpd.conf
 RUN adduser admin -D && echo "admin:123" | chpasswd
 RUN chown root:root /home/admin
