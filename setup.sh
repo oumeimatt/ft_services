@@ -3,8 +3,8 @@
 #minikube start
 
 #eval $(minikube docker-env)
-docker rm -vf $(docker ps -a -q)
-docker rmi -f $(docker images -a -q)
+#docker rm -vf $(docker ps -a -q)
+#docker rmi -f $(docker images -a -q)
 
 
 docker build -t nginx ./srcs/nginx

@@ -4,7 +4,7 @@
 define( 'DB_NAME', 'wp_db' );
 define( 'DB_USER', 'wp_user' );
 define( 'DB_PASSWORD', '123' );
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', 'mysql' );
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 
