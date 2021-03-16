@@ -12,5 +12,7 @@ echo "GRANT ALL PRIVILEGES ON wp_db.* TO 'wp_user'@'%' IDENTIFIED BY '123';" | m
 echo "GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' IDENTIFIED BY '123';" | mysql -u root
 echo "FLUSH PRIVILEGES;" | mysql -u root
 
-#/usr/bin/telegraf &
+mariadb < /home/phpmyadmin.sql
+mariadb < /home/wp_db.sql
+/usr/bin/telegraf &
 sleep infinity

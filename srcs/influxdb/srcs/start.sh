@@ -2,6 +2,6 @@
 rc-status
 touch /run/openrc/softlevel
 influx user create -n admin -p admin
-influxdb &
+influxd &
 /usr/bin/telegraf &
 sleep infinity

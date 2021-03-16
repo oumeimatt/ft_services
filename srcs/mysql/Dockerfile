@@ -9,7 +9,8 @@ RUN apk add --no-cache telegraf --repository http://dl-2.alpinelinux.org/alpine/
 RUN mkdir /etc/telegraf
 COPY ./srcs/mariadb-server.cnf /etc/my.cnf.d
 COPY ./srcs/telegraf.conf /etc/telegraf/
-
+COPY ./srcs/wp_db.sql /home/
+COPY ./srcs/phpmyadmin.sql /home/
 
 COPY /srcs/start.sh /
 CMD ["sh", "start.sh"]

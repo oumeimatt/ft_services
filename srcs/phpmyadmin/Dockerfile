@@ -16,7 +16,7 @@ RUN rm phpMyAdmin-5.0.2-all-languages.tar.gz
 RUN mv phpMyAdmin-5.0.2-all-languages phpmyadmin
 RUN cp -rf phpmyadmin /var/www/
 COPY /srcs/config.inc.php /var/www/phpmyadmin
-
+RUN mkdir /var/www/phpmyadmin/tmp && chmod 777 /var/www/phpmyadmin/tmp
 
 RUN apk add --no-cache telegraf --repository http://dl-2.alpinelinux.org/alpine/edge/community
 RUN mkdir /etc/telegraf

@@ -1,7 +1,7 @@
 #!/bin/bash
-# kubectl delete -f ./srcs/$1/$1.yaml
-minikube start
-eval $(minikube docker-env)
+#minikube delete
+#minikube start
+#eval $(minikube docker-env)
 docker build -t nginx  srcs/nginx
 kubectl apply -f srcs/yaml_files/nginx.yaml
 
@@ -13,7 +13,7 @@ kubectl apply -f srcs/yaml_files/wordpress.yaml
 docker build -t phpmyadmin  srcs/phpmyadmin
 kubectl apply -f srcs/yaml_files/phpmyadmin.yaml
 
-docker build -t mysql srcs/mysql
+#docker build -t mysql srcs/mysql
 kubectl apply -f srcs/yaml_files/mysql.yaml
 
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manifests/namespace.yaml
