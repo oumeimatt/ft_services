@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: mysql
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: mysql
@@ -23,7 +24,6 @@ kind: Service
 metadata:
   name: mysql
 spec:
-  type: ClusterIP
   selector:
     app: mysql
   ports:

@@ -2,6 +2,7 @@
 rc-status
 touch /run/openrc/softlevel
 openrc reboot
+mysql_install_db --user=mysql --datadir=/var/lib/mysql > /dev/null
 /etc/init.d/mariadb setup
 rc-service mariadb start
 
