@@ -9,7 +9,7 @@ RUN tar -xzvf grafana-7.3.2.linux-amd64.tar.gz
 RUN apk add --no-cache telegraf --repository http://dl-2.alpinelinux.org/alpine/edge/community
 RUN mkdir /etc/telegraf
 COPY ./srcs/telegraf.conf /etc/telegraf/
-
+COPY ./srcs/grafana.db /grafana-7.3.2/data/
 
 COPY /srcs/start.sh /
 CMD ["sh", "start.sh"]

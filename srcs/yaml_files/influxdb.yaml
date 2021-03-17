@@ -31,4 +31,15 @@ spec:
   - port: 8086
     targetPort: 8086
 
-
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mypvc
+spec:
+  resources:
+    requests:
+      storage: {2:<Size>}
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
