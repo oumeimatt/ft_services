@@ -2,6 +2,7 @@
 rc-status
 rc-update add vsftpd default
 touch /run/openrc/softlevel
-/usr/sbin/vsftpd /etc/vsftpd/vsftpd.conf &
+rc-service vsftpd start
 /usr/bin/telegraf &
+#/bin/sh
 sleep infinity
