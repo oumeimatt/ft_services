@@ -17,7 +17,14 @@ spec:
         image: influxdb
         imagePullPolicy: Never
         ports:
-        - containerPort: 8086
+          - containerPort: 8086
+        volumeMounts:
+          - mountPath: "/var/lib/influxdb"
+            name : influxdb
+      volumes:
+        - name: influxdb
+          persistentVolumeClaim:
+            claimName: influxdb
 ---
 apiVersion: v1
 kind: Service
@@ -30,4 +37,15 @@ spec:
   ports:
   - port: 8086
     targetPort: 8086
-
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: influxdb
+spec:
+  resources:
+    requests:
+      storage: 2Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
