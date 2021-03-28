@@ -20,7 +20,7 @@ spec:
           - containerPort: 8086
         volumeMounts:
           - mountPath: "/var/lib/influxdb"
-            name : influxdb
+            name: influxdb
       volumes:
         - name: influxdb
           persistentVolumeClaim:
