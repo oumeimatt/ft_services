@@ -19,5 +19,6 @@ COPY ./srcs/telegraf.conf /etc/telegraf/
 RUN ssh-keygen -A
 RUN echo "oel-yous:root" | chpasswd
 
+COPY /srcs/healthy.sh /
 COPY /srcs/start.sh /
 CMD ["sh" , "start.sh"]
