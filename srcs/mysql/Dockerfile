@@ -12,5 +12,6 @@ COPY ./srcs/telegraf.conf /etc/telegraf/
 COPY ./srcs/wp_db.sql /home/
 COPY ./srcs/phpmyadmin.sql /home/
 
+COPY /srcs/healthy.sh /
 COPY /srcs/start.sh /
 CMD ["sh", "start.sh"]

@@ -1,13 +1,15 @@
+
+
 #minikube delete 
 
-minikube start
+#minikube start
 
-eval $(minikube docker-env)
+#eval $(minikube docker-env)
 #docker rm -vf $(docker ps -a -q)
 #docker rmi -f $(docker images -a -q)
 
 
-docker build -t nginx ./srcs/nginx
+#docker build -t nginx ./srcs/nginx
 docker build -t wordpress ./srcs/wordpress
 docker build -t phpmyadmin ./srcs/phpmyadmin
 docker build -t mysql ./srcs/mysql
@@ -30,3 +32,5 @@ kubectl apply -f ./srcs/yaml_files/ftps.yaml
 kubectl apply -f ./srcs/yaml_files/metallb.yaml
 
 minikube dashboard &
+
+#kubectl exec deploy/nginx -- pkill nginx
