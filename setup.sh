@@ -1,15 +1,13 @@
 
 
-#minikube delete 
+minikube delete 
 
-#minikube start
+minikube start
 
-#eval $(minikube docker-env)
-#docker rm -vf $(docker ps -a -q)
-#docker rmi -f $(docker images -a -q)
+eval $(minikube docker-env)
 
 
-#docker build -t nginx ./srcs/nginx
+docker build -t nginx ./srcs/nginx
 docker build -t wordpress ./srcs/wordpress
 docker build -t phpmyadmin ./srcs/phpmyadmin
 docker build -t mysql ./srcs/mysql
@@ -26,7 +24,7 @@ kubectl apply -f ./srcs/yaml_files/nginx.yaml
 kubectl apply -f ./srcs/yaml_files/wordpress.yaml
 kubectl apply -f ./srcs/yaml_files/phpmyadmin.yaml
 kubectl apply -f ./srcs/yaml_files/mysql.yaml
-kubectl apply -f ./srcs/yaml_files/influxdb.yaml
+kubectl apply -f ./srcs/yaml_files/influxDB.yaml
 kubectl apply -f ./srcs/yaml_files/grafana.yaml
 kubectl apply -f ./srcs/yaml_files/ftps.yaml
 kubectl apply -f ./srcs/yaml_files/metallb.yaml

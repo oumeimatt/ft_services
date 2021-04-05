@@ -4,10 +4,8 @@ RUN apk update
 RUN apk add openrc --no-cache vsftpd openssl
 COPY srcs/vsftpd.conf /etc/vsftpd/vsftpd.conf
 RUN adduser admin -D && echo "admin:123" | chpasswd
-RUN mkdir -p /home/admin/ftp/upload
-RUN chmod 550 /home/admin/ftp && chmod 750 /home/admin/ftp/upload && chown -R admin: /home/admin/ftp/
-#RUN chown admin:admin /home/admin
-#RUN chown admin:admin /home/admin/files
+RUN mkdir -p /home/admin/ftp/files
+RUN chmod 550 /home/admin/ftp && chmod 750 /home/admin/ftp/files && chown -R admin: /home/admin/ftp/
 COPY /srcs/ftps.pem /etc/ssl/
 
 

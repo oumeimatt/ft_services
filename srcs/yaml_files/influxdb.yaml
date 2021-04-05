@@ -23,7 +23,7 @@ spec:
             command:
             - sh
             - healthy.sh
-          initialDelaySeconds: 20
+          initialDelaySeconds: 40
           periodSeconds: 5
         volumeMounts:
           - mountPath: "/root/.influxdb"
@@ -38,7 +38,6 @@ kind: Service
 metadata:
   name: influxdb
 spec:
-  type: ClusterIP
   selector:
     app: influxdb
   ports:
@@ -52,7 +51,7 @@ metadata:
 spec:
   resources:
     requests:
-      storage: 2Gi
+      storage: 10Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce

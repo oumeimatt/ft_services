@@ -23,7 +23,7 @@ spec:
             command:
             - sh
             - healthy.sh
-          initialDelaySeconds: 20
+          initialDelaySeconds: 30
           periodSeconds: 5
         volumeMounts:
           - mountPath: "/var/lib/mysql"
@@ -51,7 +51,7 @@ metadata:
 spec:
   resources:
     requests:
-      storage: 2Gi
+      storage: 10Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
