@@ -12,6 +12,7 @@ spec:
       labels:
         app: phpmyadmin
     spec:
+      restartPolicy: Always
       containers:
       - name: phpmyadmin
         image: phpmyadmin
@@ -23,7 +24,7 @@ spec:
             command:
             - sh
             - healthy.sh
-          initialDelaySeconds: 20
+          initialDelaySeconds: 30
           periodSeconds: 5
 ---
 apiVersion: v1

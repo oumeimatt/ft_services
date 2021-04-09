@@ -1,3 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql
+spec:
+  resources:
+    requests:
+      storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -12,6 +24,7 @@ spec:
       labels:
         app: mysql
     spec:
+      restartPolicy: Always
       containers:
       - name: mysql
         image: mysql
@@ -43,15 +56,3 @@ spec:
   ports:
   - port: 3306
     targetPort: 3306    
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: mysql
-spec:
-  resources:
-    requests:
-      storage: 10Gi
-  volumeMode: Filesystem
-  accessModes:
-    - ReadWriteOnce

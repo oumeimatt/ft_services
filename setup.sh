@@ -1,6 +1,6 @@
 
 
-minikube delete 
+#minikube delete 
 
 minikube start
 

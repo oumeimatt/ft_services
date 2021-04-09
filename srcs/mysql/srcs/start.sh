@@ -1,9 +1,8 @@
  #!/bin/bash
 rc-status
 touch /run/openrc/softlevel
-mysql_install_db --user=mysql --datadir=/var/lib/mysql > /dev/null
 /etc/init.d/mariadb setup
-rc-service mariadb start
+rc-service mariadb restart
 
 echo "FLUSH PRIVILEGES;" | mysql -u root
 echo "CREATE DATABASE wp_db;" | mysql -u root

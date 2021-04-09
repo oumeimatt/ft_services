@@ -12,6 +12,7 @@ spec:
       labels:
         app: nginx
     spec:
+      restartPolicy: Always
       containers:
       - name: nginx
         image: nginx
@@ -25,7 +26,7 @@ spec:
             command:
             - sh
             - healthy.sh
-          initialDelaySeconds: 20
+          initialDelaySeconds: 30
           periodSeconds: 5
 ---
 apiVersion: v1
